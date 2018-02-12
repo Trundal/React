@@ -1,0 +1,22 @@
+.charComponents {
+	display: flex;
+	align-items: center;
+	align-content: center;
+}
+.text {
+
+}
+.text--character {
+	font-size: 1.5em;
+	font-weight: bold;
+	padding: 10px;
+	width: 30px;
+	background-color: #eee;
+	border: 1px solid #333;
+	margin: 2px;
+	text-align: center;
+	cursor: pointer;
+}
+.text--character:hover {
+	background-color: #fff;
+}
