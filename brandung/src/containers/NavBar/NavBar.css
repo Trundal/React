@@ -1,0 +1,21 @@
+.navBar {
+	width: 100%;
+	background-color: #fff;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.headline {
+	margin: 3px;
+}
+
+@media screen and (max-width: 480px) {
+	.navBar {
+		flex-direction: column;
+	}
+
+	.navBar__headline {
+		margin: 0 0 3px 0;
+	}
+}

@@ -1,0 +1,35 @@
+.navBar {
+	width: 100%;
+	background-color: white;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.navBar__logo {
+	margin-top: 3px;
+}
+
+.navBar__headline {
+	margin: 3px;
+}
+
+.navBar__logo img {
+	height: 40px;
+	margin: auto;
+	cursor: pointer;
+}
+
+@media screen and (max-width: 480px) {
+	.navBar {
+		flex-direction: column;
+	}
+
+	.navBar__logo img {
+		height: 35px;
+	}
+
+	.navBar__headline {
+		margin: 0 0 3px 0;
+	}
+}

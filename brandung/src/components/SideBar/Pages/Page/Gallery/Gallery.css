@@ -1,0 +1,12 @@
+.image {
+	width: 47%;
+	min-width: 110px;
+	height: auto;
+	margin: 10px 0;
+}
+
+.image img {
+	width: 100%;
+	border: 3px lightgrey solid;
+	box-sizing: border-box;
+}

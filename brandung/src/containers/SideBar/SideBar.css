@@ -1,0 +1,27 @@
+.sideBar {
+	width: 40%;
+	margin: 20px 0 0 20px;
+	max-width: 550px;
+	min-width: 350px;
+	height: auto;
+	background-color: white;
+	padding: 5px;
+	display: flex;
+	flex-direction: column;
+	box-sizing: border-box;
+}
+
+.sideBar ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+@media screen and (max-width: 480px) {
+	.sideBar {
+		width: 100%;
+		min-width: 300px;
+		margin: 20px 0 0 0;
+	}
+
+}

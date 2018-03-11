@@ -1,0 +1,7 @@
+.menu {
+	background: rgb(41, 118, 185);
+	background: linear-gradient(rgb(44,130,207), rgb(41,118,185));
+	display: flex;
+	align-items: flex-end;
+	height: 50px;
+}

@@ -1,0 +1,115 @@
+.article {
+	position: relative;
+	padding: 15px 5px;
+	border-bottom: solid lightgrey 1px;
+	display: flex;
+	flex-direction: column;
+}
+
+.summary {
+	display: flex;
+	justify-content: space-between;
+}
+
+.header {
+	width: 70%;
+	margin: 0 5px 0 15px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.image {
+	width: 30%;
+	min-width: 110px;
+	height: auto;
+	padding: 0 0 3px 6px;
+	margin: 0;
+}
+
+.image--gallery {
+	width: 40%;
+}
+
+.image img {
+	width: 100%;
+	border: 3px lightgrey solid;
+	box-sizing: border-box;
+}
+
+.date {
+	font-size: .7em;
+	margin-bottom: 4px;
+}
+
+.headline {
+	line-height: 1.1;
+	color: rgb(41,118,185);
+	margin-bottom: 8px;
+}
+
+.teaser {
+	font-size: .7em;
+	margin-bottom: 8px;
+}
+
+.copyLink {
+	font-size: .8em;
+	font-weight: bold;
+	cursor: pointer;
+	transition: all .4s ease;
+}
+
+.copyLink:hover {
+	color: rgb(41,118,185);
+}
+
+.linkText {
+	display: inline-block;
+	margin-left: 5px;
+}
+
+.arrow {
+    border: solid rgb(41,118,185);
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 2px;
+	transition: all .3s ease;
+}
+
+.twirlUp {
+	transform: rotate(-45deg) translateY(-2px);
+
+}
+
+.twirlDown {
+	transform: rotate(45deg) translateY(-2px) translateX(-2px);
+}
+
+.copy {
+	font-size: .8em;
+	line-height: 1.1;
+	max-height: 0;
+	opacity: 0;
+	padding: 0 6px;
+	overflow: hidden;
+	transition: all .1s ease-in;
+}
+
+.copyOpen {
+	opacity: 1;
+	max-height: 100%;
+	padding: 10px 6px;
+	transition: all .2s ease-out;
+}
+
+@media screen and (max-width: 480px) {
+
+	.image {
+		padding: 0 0 3px 3px;
+	}
+
+	.header {
+		margin-left: 10px;
+	}
+}

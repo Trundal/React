@@ -1,0 +1,17 @@
+.page {
+	display: none;
+	flex-direction: column;
+}
+
+.gallery {
+	display: none;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	margin-top: 20px;
+	border-bottom: solid lightgrey 1px;
+}
+
+.active {
+	display: flex;
+}

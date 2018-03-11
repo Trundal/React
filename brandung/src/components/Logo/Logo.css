@@ -1,0 +1,15 @@
+.Logo {
+	margin-top: 3px;
+}
+
+.LogoImg {
+	height: 40px;
+	margin: auto;
+	cursor: pointer;
+}
+
+@media screen and (max-width: 480px) {
+	.navBar__logo img {
+		height: 35px;
+	}
+}
