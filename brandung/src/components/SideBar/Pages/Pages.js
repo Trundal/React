@@ -9,7 +9,8 @@ const pages = (props) => {
 			return <Page key={pageKey + i} 
 				pageObject={props.pages[pageKey]} 
 				active={props.pages[pageKey].active} 
-				clicked={props.clicked} 
+				clicked={props.clicked}
+				matchFunction={props.matchFunction}
 				pageNum={pageKey}/>
 		});
 	}).reduce((arr,el) => {

@@ -5,12 +5,13 @@ import Article from './Article/Article';
 import Gallery from './Gallery/Gallery';
 
 const page = (props) => {
+
 	const pageClasses = [
 		props.pageObject.type === "article" ? classes.page :
 		props.pageObject.type === "gallery" ? classes.gallery : null, 
 		props.active ? classes.active : null ];
 
-	let articles = Object.keys(props.pageObject.content).map(articleKey => {
+	const articles = Object.keys(props.pageObject.content).map(articleKey => {
 		return [...Array(props.pageObject.content[articleKey])].map((_, i) => {
 			if (props.pageObject.type === "article") {
 				return <Article 
@@ -18,6 +19,7 @@ const page = (props) => {
 					articleObject={props.pageObject.content[articleKey]} 
 					clicked={props.clicked} 
 					articleNum={articleKey}
+					matchFunction={props.matchFunction}
 					pageNum={props.pageNum}/>
 			} else if (props.pageObject.type === "gallery") {
 				return <Gallery key={articleKey + i} articleObject={props.pageObject.content[articleKey]} />
