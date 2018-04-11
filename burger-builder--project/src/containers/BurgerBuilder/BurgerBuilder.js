@@ -22,7 +22,7 @@ class BurgerBuilder extends Component {
 		totalPrice: 4,
 		purchasable: false,
 		purchasing: false,
-		loading: false, 
+		loading: false,
 		error: false
 	}
 
@@ -36,7 +36,7 @@ class BurgerBuilder extends Component {
 			});
 	}
 
-	purchaseHandler = () => { 
+	purchaseHandler = () => {
 		this.setState({purchasing: true})
 	}
 
@@ -45,28 +45,16 @@ class BurgerBuilder extends Component {
 	}
 
 	purchaseContinueHandler = () => {
-		this.setState({loading: true});
-		const order = {
-			ingredients: this.state.ingredients,
-			price: this.state.totalPrice,
-			customer: {
-				name: 'Korey Powell',
-				address: {
-					street: 'MyStreet 2',
-					zipCode: '23417',
-					country: 'Germany'
-				},
-				email: 'test@test.com'
-			},
-			deliveryMethod: 'fastest'
+		const queryParams = [];
+		for (let i in this.state.ingredients) {
+			queryParams.push(encodeURIComponent(i) + '=' + encodeURIComponent(this.state.ingredients[i]));
 		}
-		axios.post('/orders.json', order)
-			.then(response => {
-				this.setState({ loading: false, purchasing: false });
-			})
-			.catch(error => {
-				this.setState({ loading: false, purchasing: false });
-			});
+		queryParams.push('price=' + this.state.totalPrice);
+		const queryString = queryParams.join('&');
+		this.props.history.push({
+			pathname: '/checkout',
+			search: '?' + queryString
+		});
 	}
 
 	updatePurchaseState (ingredients) {
@@ -122,7 +110,7 @@ class BurgerBuilder extends Component {
 			burger = (
 				<Aux>
 					<Burger ingredients={this.state.ingredients} />
-					<BuildControls 
+					<BuildControls
 						ingredientAdded = {this.addIngredientHandler}
 						ingredientRemoved = {this.removeIngredientHandler}
 						disabled={disabledInfo}
@@ -132,8 +120,8 @@ class BurgerBuilder extends Component {
 					/>
 				</Aux>
 			);
-			orderSummary = <OrderSummary 
-				ingredients={this.state.ingredients} 
+			orderSummary = <OrderSummary
+				ingredients={this.state.ingredients}
 				price={this.state.totalPrice}
 				purchaseCancelled={this.purchaseCancelHandler}
 				purchaseContinued={this.purchaseContinueHandler} />
@@ -147,7 +135,7 @@ class BurgerBuilder extends Component {
 					{orderSummary}
 				</Modal>
 				{burger}
-			</Aux>	
+			</Aux>
 		);
 	}
 }
